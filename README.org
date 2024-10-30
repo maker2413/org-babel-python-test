@@ -1,0 +1,32 @@
+#+TITLE: Replacing Jupyter Notebooks with Org Mode
+
+Jupyter Notebooks are pretty cool, but doing stuff in emacs is better and
+org-mode might as well be the best writing tool ever created.
+
+I'm using this repository as a place to test the capabilities and functionality
+of org-mode with regards to python development. I'm hoping to axe Jupyter out of
+my life. A lot of this is taken from this site:
+https://michaelneuper.com/posts/replace-jupyter-notebook-with-emacs-org-mode/
+
+With that out of the way let's begin playing around:
+#+BEGIN_SRC elisp
+(setq org-babel-python-command "/home/epost/Code/org-jupyter/.venv/bin/python")
+#+END_SRC
+
+#+RESULTS:
+: /home/epost/Code/org-jupyter/.venv/bin/python
+
+#+BEGIN_SRC python :session foo :results output :exports both
+  a = 27
+  print(a)
+#+END_SRC
+
+#+RESULTS:
+: 27
+
+#+begin_src python :results output raw
+  print("Hello, Emacs Org Mode!")
+#+end_src
+
+#+RESULTS:
+Hello, Emacs Org Mode!
