@@ -1,18 +1,8 @@
 #+TITLE: Replacing Jupyter Notebooks with Org Mode
 #+PROPERTY: header-args:python :session python
-#+PROPERTY: header-args:python+ :tangle test.py
-#+PROPERTY: header-args:python+ :results output raw drawer
+#+PROPERTY: header-args:python+ :results output
 #+PROPERTY: header-args:python+ :shebang "#!/usr/bin/env python"
 
-Jupyter Notebooks are pretty cool, but doing stuff in emacs is better and
-org-mode might as well be the best writing tool ever created.
-
-I'm using this repository as a place to test the capabilities and functionality
-of org-mode with regards to python development. I'm hoping to axe Jupyter out of
-my life. A lot of this is taken from this site:
-https://michaelneuper.com/posts/replace-jupyter-notebook-with-emacs-org-mode/
-
-With that out of the way let's begin playing around:
 #+BEGIN_SRC elisp :exports none
   ;; This will make org-babel use the .venv directory in this repo
   (setq org-babel-python-command (concat
@@ -23,27 +13,49 @@ With that out of the way let's begin playing around:
 #+RESULTS:
 : /home/epost/Code/org-jupyter/.venv/bin/python
 
+Jupyter Notebooks are pretty cool, but doing stuff in emacs is better and
+org-mode might as well be the best writing tool ever created.
+
+I'm using this repository as a place to test the capabilities and functionality
+of org-mode with regards to python development. I'm hoping to axe Jupyter out of
+my life. A lot of this is taken from this site:
+https://michaelneuper.com/posts/replace-jupyter-notebook-with-emacs-org-mode/
+
+That being said this repository will definitely be useless to anyone looking at
+it. The only reason I have this repository public is because I like to learn out
+in the open.
+
+With that out of the way let's begin playing around:
+#+name: results-output
 #+BEGIN_SRC python :session foo :results output :exports both
   a = 27
   print(a)
 #+END_SRC
 
-#+RESULTS:
+This is what ~:results output~ looks like:
+#+RESULTS: results-output
 : 27
 
-#+begin_src python :results output raw drawer
+#+name: results-output-raw-drawer
+#+begin_src python :results output raw drawer :exports both
   b = 21
   print(b)
 #+end_src
 
-#+RESULTS:
+This is what ~:results output raw drawer~ looks like:
+#+RESULTS: results-output-raw-drawer
 :results:
 21
 :end:
 
+#+name: results-output-raw
 #+begin_src python :results output raw :exports both
   print("Hello, Emacs Org Mode!")
 #+end_src
 
-#+RESULTS:
+This is what ~:results output raw~ looks like:
+#+RESULTS: results-output-raw
 Hello, Emacs Org Mode!
+
+It looks like rerunning blocks with ~:results output raw~ will keep appending to
+the results block.
