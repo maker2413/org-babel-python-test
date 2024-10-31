@@ -1,4 +1,8 @@
 #+TITLE: Replacing Jupyter Notebooks with Org Mode
+#+PROPERTY: header-args:python :session python
+#+PROPERTY: header-args:python+ :tangle test.py
+#+PROPERTY: header-args:python+ :results output raw drawer
+#+PROPERTY: header-args:python+ :shebang "#!/usr/bin/env python"
 
 Jupyter Notebooks are pretty cool, but doing stuff in emacs is better and
 org-mode might as well be the best writing tool ever created.
@@ -9,8 +13,11 @@ my life. A lot of this is taken from this site:
 https://michaelneuper.com/posts/replace-jupyter-notebook-with-emacs-org-mode/
 
 With that out of the way let's begin playing around:
-#+BEGIN_SRC elisp
-(setq org-babel-python-command "/home/epost/Code/org-jupyter/.venv/bin/python")
+#+BEGIN_SRC elisp :exports none
+  ;; This will make org-babel use the .venv directory in this repo
+  (setq org-babel-python-command (concat
+                                  (file-name-directory (or load-file-name (buffer-file-name)))
+                                  ".venv/bin/python"))
 #+END_SRC
 
 #+RESULTS:
@@ -24,7 +31,17 @@ With that out of the way let's begin playing around:
 #+RESULTS:
 : 27
 
-#+begin_src python :results output raw
+#+begin_src python :results output raw drawer
+  b = 21
+  print(b)
+#+end_src
+
+#+RESULTS:
+:results:
+21
+:end:
+
+#+begin_src python :results output raw :exports both
   print("Hello, Emacs Org Mode!")
 #+end_src
 
