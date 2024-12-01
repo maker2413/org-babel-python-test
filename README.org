@@ -13,6 +13,8 @@
 #+RESULTS:
 : /home/epost/Code/org-jupyter/.venv/bin/python
 
+[[https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white][Terraform]]
+
 Jupyter Notebooks are pretty cool, but doing stuff in emacs is better and
 org-mode might as well be the best writing tool ever created.
 
@@ -36,6 +38,7 @@ This is what ~:results output~ looks like:
 #+RESULTS: results-output
 : 27
 
+Let's try ~:results output raw drawer~:
 #+name: results-output-raw-drawer
 #+begin_src python :results output raw drawer :exports both
   b = 21
@@ -48,6 +51,7 @@ This is what ~:results output raw drawer~ looks like:
 21
 :end:
 
+Let's try ~:results output raw~:
 #+name: results-output-raw
 #+begin_src python :results output raw :exports both
   print("Hello, Emacs Org Mode!")
