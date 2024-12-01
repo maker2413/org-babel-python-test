@@ -16,7 +16,7 @@
 #+BEGIN_HTML
 <h3 align="center">Tools</h3>
 <p align="center">
-  <img src="https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white" />
+  <a href="https://www.terraform.io/"><img src="https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white" /></a>
 </p>
 #+END_HTML
 
