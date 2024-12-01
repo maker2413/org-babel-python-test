@@ -13,7 +13,10 @@
 #+RESULTS:
 : /home/epost/Code/org-jupyter/.venv/bin/python
 
-[[https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white]]
+<h3 align="center">Tools</h3>
+<p align="center">
+  <img src="https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white" />
+</p>
 
 Jupyter Notebooks are pretty cool, but doing stuff in emacs is better and
 org-mode might as well be the best writing tool ever created.
