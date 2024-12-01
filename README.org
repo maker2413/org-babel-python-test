@@ -36,17 +36,28 @@ This is what ~:results output~ looks like:
 #+RESULTS: results-output
 : 27
 
+Let's try ~:results raw~:
+#+name: results-raw
+#+BEGIN_SRC python :session foo :results output :exports both
+  b = 21
+  print(b)
+#+END_SRC
+
+This is what ~:results raw~ looks like:
+#+RESULTS: results-raw
+: 21
+
 Let's try ~:results output raw drawer~:
 #+name: results-output-raw-drawer
 #+begin_src python :results output raw drawer :exports both
-  b = 21
-  print(b)
+  c = 45
+  print(c)
 #+end_src
 
 This is what ~:results output raw drawer~ looks like:
 #+RESULTS: results-output-raw-drawer
 :results:
-21
+45
 :end:
 
 Let's try ~:results output raw~:
